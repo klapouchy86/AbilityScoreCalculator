@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace AbilityScoreCalculator
+namespace AbilityScore
 {
     class AbilityScoreCalculator
     {
@@ -16,11 +14,14 @@ namespace AbilityScoreCalculator
 
         public void CalculateAbilityScore()
         {
-            double divided = RollResult / DivideBy; //dzielenie wyniku rzutu przez pole DivideBy
+            // Divide the roll result by the DivideBy field
+            double divided = RollResult / DivideBy;
 
-            int added = AddAmount += (int)divided; //dodawanie AddAmount do wyniku dzielenia
+            // Add AddAmount to the result of that division
+            int added = AddAmount = (int)divided;
 
-            if (added < Minimum)  //jeśli wynik jest z niski użyj Minimum
+            // If the result is too small, use Minimum
+            if (added < Minimum)
             {
                 Score = Minimum;
             }
@@ -29,6 +30,5 @@ namespace AbilityScoreCalculator
                 Score = added;
             }
         }
-
     }
 }
